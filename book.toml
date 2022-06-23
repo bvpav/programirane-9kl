@@ -4,3 +4,8 @@ language = "bg"
 multilingual = true
 src = "src"
 title = "Въпроси от презентациите по програмиране от 9 клас"
+
+[output.html]
+site-url = "/programirane-9kl/"
+git-repository-url = "https://github.com/bvpav/programirane-9kl"
+edit-url-template = "https://github.com/bvpav/programirane-9kl/edit/master/{path}"
