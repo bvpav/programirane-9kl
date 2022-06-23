@@ -1,0 +1,6 @@
+[book]
+authors = ["bvpav"]
+language = "bg"
+multilingual = true
+src = "src"
+title = "Въпроси от презентациите по програмиране от 9 клас"
