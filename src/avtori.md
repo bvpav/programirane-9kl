@@ -6,8 +6,6 @@
 
 - Божидар Павлов ([bvpav](https://github.com/bvpav))
 - Ива Маринова ([IvaAMarinova](https://github.com/IvaAMarinova))
-
-И редактиран с невероятната помощ на:
 - Мартина Бикова ([mmoonniiee](https://github.com/mmoonniiee))
 
 Моля, когато редактирате съдържанието на сайта, добавете и Вашето име в този списък.
