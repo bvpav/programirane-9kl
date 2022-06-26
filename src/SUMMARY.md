@@ -7,3 +7,7 @@
 - [Функции в C](./funkcii_v_c.md)
 - [C за среднo напреднали](./c_za_sredno_naprednali.md)
 - [Потребителски типове](./potrebitelski_tipove.md)
+
+---
+
+[Автори](./avtori.md)
