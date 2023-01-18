@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="bg" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Алгоритми - Въпроси от презентациите по програмиране от 9 клас</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="sistemno_programirane.html"><strong aria-hidden="true">1.</strong> Системно програмиране</a></li><li class="chapter-item expanded "><a href="operacii.html"><strong aria-hidden="true">2.</strong> Операции</a></li><li class="chapter-item expanded "><a href="algoritmi.html" class="active"><strong aria-hidden="true">3.</strong> Алгоритми</a></li><li class="chapter-item expanded "><a href="c_ezikut_na_sistemnoto_programirane.html"><strong aria-hidden="true">4.</strong> C – езикът на системното програмиране</a></li><li class="chapter-item expanded "><a href="funkcii_v_c.html"><strong aria-hidden="true">5.</strong> Функции в C</a></li><li class="chapter-item expanded "><a href="c_za_sredno_naprednali.html"><strong aria-hidden="true">6.</strong> C за среднo напреднали</a></li><li class="chapter-item expanded "><a href="potrebitelski_tipove.html"><strong aria-hidden="true">7.</strong> Потребителски типове</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="avtori.html">Автори</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Въпроси от презентациите по програмиране от 9 клас</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/bvpav/programirane-9kl" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/bvpav/programirane-9kl/edit/master/src/algoritmi.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Алгоритми"><a class="header" href="#Алгоритми">Алгоритми</a></h1>
+<p><a href="https://docs.google.com/presentation/d/1nF620Ee12t1hVwVrxf2ZNpzVJDagpA5P/edit?usp=sharing&amp;ouid=101404069411555549635&amp;rtpof=true&amp;sd=true">Линк към презентацията</a></p>
+<h2 id="Програмиране"><a class="header" href="#Програмиране">Програмиране</a></h2>
+<h3 id="Каква-е-работата-на-програмиста"><a class="header" href="#Каква-е-работата-на-програмиста">Каква е работата на програмиста?</a></h3>
+<p>Да превърне поставен проблем в инструкции за процесор, които го решават.</p>
+<h3 id="Какво-е-интерфейс"><a class="header" href="#Какво-е-интерфейс">Какво е интерфейс?</a></h3>
+<p>При него проблемът се разделя на части, определят се входни и изходни данни за неизвестен алгоритъм.</p>
+<h3 id="Какъв-е-методът-на-низходящото-програмиране"><a class="header" href="#Какъв-е-методът-на-низходящото-програмиране">Какъв е методът на низходящото програмиране?</a></h3>
+<p>Големите стъпки се разделят на по-малки, все по-прости, потенциално от различни програмисти.</p>
+<h3 id="Кой-извършва-последната-стъпка-при-низходящо-програмиране"><a class="header" href="#Кой-извършва-последната-стъпка-при-низходящо-програмиране">Кой извършва последната стъпка при низходящо програмиране?</a></h3>
+<p>Компилаторът.</p>
+<h3 id="Как-няколко-програмиста-работят-заедно"><a class="header" href="#Как-няколко-програмиста-работят-заедно">Как няколко програмиста работят заедно?</a></h3>
+<p>Като всеки вземе отделна стъпка от проблема.</p>
+<h2 id="Алгоритми-1"><a class="header" href="#Алгоритми-1">Алгоритми</a></h2>
+<h3 id="Какво-е-алгоритъм"><a class="header" href="#Какво-е-алгоритъм">Какво е алгоритъм?</a></h3>
+<p>Точно упътване за решаване на проблем или вид проблеми.</p>
+<h3 id="Кой-е-измислил-алгоритъма"><a class="header" href="#Кой-е-измислил-алгоритъма">Кой е измислил алгоритъма?</a></h3>
+<p>Мухамада ибн Мус ал-Хорезми – бащата на алгебрата.</p>
+<h2 id="Преходи"><a class="header" href="#Преходи">Преходи</a></h2>
+<h3 id="Как-се-означават-преходи-в-алгоритъм"><a class="header" href="#Как-се-означават-преходи-в-алгоритъм">Как се означават преходи в алгоритъм?</a></h3>
+<p>Със стрелки.</p>
+<h3 id="Каква-е-функцията-на-стрелките-в-описание-на-алгоритъм"><a class="header" href="#Каква-е-функцията-на-стрелките-в-описание-на-алгоритъм">Каква е функцията на стрелките в описание на алгоритъм?</a></h3>
+<p>Свързват точно 2 стъпки от него и показват реда им на изпълнение.</p>
+<h3 id="Какво-свързват-преходите"><a class="header" href="#Какво-свързват-преходите">Какво свързват преходите?</a></h3>
+<p>2 стъпки от алгоритъма .-.</p>
+<h2 id="Конектори"><a class="header" href="#Конектори">Конектори</a></h2>
+<h3 id="Какво-е-конектор"><a class="header" href="#Какво-е-конектор">Какво е конектор?</a></h3>
+<p>Фигура, която се използва за прегледност.</p>
+<h3 id="От-какво-се-състои-конекторът"><a class="header" href="#От-какво-се-състои-конекторът">От какво се състои конекторът?</a></h3>
+<p>От кръгче с номер и стрелка.</p>
+<h3 id="Какво-се-съдържа-в-конекторът"><a class="header" href="#Какво-се-съдържа-в-конекторът">Какво се съдържа в конекторът?</a></h3>
+<p>Уникален номер за разделяне на по-дълга стрелка на две части.</p>
+<h3 id="Как-конекторът-променя-алгоритъма"><a class="header" href="#Как-конекторът-променя-алгоритъма">Как конекторът променя алгоритъма?</a></h3>
+<p>Не го променя, позволява записа да отиде на друга страница, като се раздели на 2 части.</p>
+<h2 id="Начало-и-край"><a class="header" href="#Начало-и-край">Начало и край</a></h2>
+<h3 id="Как-се-означава-началото-на-алгоритъм"><a class="header" href="#Как-се-означава-началото-на-алгоритъм">Как се означава началото на алгоритъм?</a></h3>
+<p>С кръгче, от което излиза стрелка, но не влиза такава.</p>
+<h3 id="Колко-начала-може-да-има-един-алгоритъм"><a class="header" href="#Колко-начала-може-да-има-един-алгоритъм">Колко начала може да има един алгоритъм?</a></h3>
+<p>Едно.</p>
+<h3 id="Как-се-означава-край-на-алгоритъм"><a class="header" href="#Как-се-означава-край-на-алгоритъм">Как се означава край на алгоритъм?</a></h3>
+<p>Кръгче, в което влиза стрелка, но не излиза такава.</p>
+<h3 id="Колко-края-може-да-има-един-алгоритъм"><a class="header" href="#Колко-края-може-да-има-един-алгоритъм">Колко края може да има един алгоритъм?</a></h3>
+<p>Поне един.</p>
+<h3 id="Как-се-свързват-всички-блокове-без-началото-и-края"><a class="header" href="#Как-се-свързват-всички-блокове-без-началото-и-края">Как се свързват всички блокове без началото и края?</a></h3>
+<p>Входна и изходна/и стрелка/и.</p>
+<h3 id="Какво-се-случва-след-края-на-алгоритъма"><a class="header" href="#Какво-се-случва-след-края-на-алгоритъма">Какво се случва след края на алгоритъма?</a></h3>
+<p>Ако даденият алгоритъм е стъпка от по-голям алгоритъм, след края на вложения алгоритъм продължава съдържащия, ако не - нищо.</p>
+<h2 id="Вход-и-изход"><a class="header" href="#Вход-и-изход">Вход и изход</a></h2>
+<h3 id="Какво-е-действието-на-блок-за-вход"><a class="header" href="#Какво-е-действието-на-блок-за-вход">Какво е действието на блок за вход?</a></h3>
+<p>Указва получаване на данни за алгоритъма.</p>
+<h3 id="Какво-се-записва-в-блок-за-вход"><a class="header" href="#Какво-се-записва-в-блок-за-вход">Какво се записва в блок за вход?</a></h3>
+<p>Съдържа имена на променливи, които се въвеждат</p>
+<h3 id="Колко-пъти-може-да-се-изпълни-блок-за-вход"><a class="header" href="#Колко-пъти-може-да-се-изпълни-блок-за-вход">Колко пъти може да се изпълни блок за вход?</a></h3>
+<p>Много.</p>
+<h3 id="Какво-е-действието-на-блок-за-изход"><a class="header" href="#Какво-е-действието-на-блок-за-изход">Какво е действието на блок за изход?</a></h3>
+<p>Извежда данни от алгоритъма / връща резултат.</p>
+<h3 id="Какво-се-записва-в-блок-за-изход"><a class="header" href="#Какво-се-записва-в-блок-за-изход">Какво се записва в блок за изход?</a></h3>
+<p>Имена на променливи, от които се връща резултат от работата на алгоритъм.</p>
+<h3 id="Колко-пъти-може-да-се-изпълни-блок-за-изход"><a class="header" href="#Колко-пъти-може-да-се-изпълни-блок-за-изход">Колко пъти може да се изпълни блок за изход?</a></h3>
+<p>Много.</p>
+<h2 id="Обработка"><a class="header" href="#Обработка">Обработка</a></h2>
+<h3 id="Как-се-означава-блок-за-обработка"><a class="header" href="#Как-се-означава-блок-за-обработка">Как се означава блок за обработка?</a></h3>
+<p>Правоъгълник с входна и изходна стрелка.</p>
+<h3 id="Колко-входа-и-колко-изхода-има-блок-за-обработка"><a class="header" href="#Колко-входа-и-колко-изхода-има-блок-за-обработка">Колко входа и колко изхода има блок за обработка?</a></h3>
+<p>Един вход и един изход.</p>
+<h3 id="Какво-съдържа-задължително-блок-за-обработка"><a class="header" href="#Какво-съдържа-задължително-блок-за-обработка">Какво съдържа задължително блок за обработка?</a></h3>
+<p>Присвояване на променливи с <code>=</code> или обръщение към друг алгоритъм.</p>
+<h3 id="Колко-пъти-може-да-се-изпълни-блок-за-обработка"><a class="header" href="#Колко-пъти-може-да-се-изпълни-блок-за-обработка">Колко пъти може да се изпълни блок за обработка?</a></h3>
+<p>Много пъти.</p>
+<h3 id="Как-се-прави-обръщение-към-друг-алгоритъм"><a class="header" href="#Как-се-прави-обръщение-към-друг-алгоритъм">Как се прави обръщение към друг алгоритъм?</a></h3>
+<p>Името, следвано от скоби, в които има параметри.</p>
+<h2 id="Разклонение"><a class="header" href="#Разклонение">Разклонение</a></h2>
+<h3 id="Как-се-означава-блок-за-разклонение"><a class="header" href="#Как-се-означава-блок-за-разклонение">Как се означава блок за разклонение?</a></h3>
+<p>Ромб с входна стрелка и две изходни.</p>
+<h3 id="Колко-входа-и-колко-изхода-има-блок-за-разклонение"><a class="header" href="#Колко-входа-и-колко-изхода-има-блок-за-разклонение">Колко входа и колко изхода има блок за разклонение?</a></h3>
+<p>1 вход, 2 изхода.</p>
+<h3 id="Какво-съдържа-блока-за-разклонение"><a class="header" href="#Какво-съдържа-блока-за-разклонение">Какво съдържа блока за разклонение?</a></h3>
+<p>Израз, който изчислява булев резултат. Може да съдържа и извикване на алгоритми, връщащи числова стойност като част от израза.</p>
+<h3 id="Колко-пъти-може-да-се-изпълни-блока-за-разклонение"><a class="header" href="#Колко-пъти-може-да-се-изпълни-блока-за-разклонение">Колко пъти може да се изпълни блока за разклонение?</a></h3>
+<p>Много.</p>
+<h2 id="Свойства-на-алгоритмите"><a class="header" href="#Свойства-на-алгоритмите">Свойства на алгоритмите</a></h2>
+<h3 id="Какво-е-определеност"><a class="header" href="#Какво-е-определеност">Какво е определеност?</a></h3>
+<p>Свойство на алгоритъма, при едни и същи данни да се получава един и същи резултат.</p>
+<h3 id="Какво-е-резултатност"><a class="header" href="#Какво-е-резултатност">Какво е резултатност?</a></h3>
+<p>Свойство на алгоритъма да гарантира получаване на краен резултат след изпълнението на краен брой указания.</p>
+<h3 id="Какво-е-дискретност"><a class="header" href="#Какво-е-дискретност">Какво е дискретност?</a></h3>
+<p>Свойство на алгоритъма да се състои от отделни, разграничени по време една от други стъпки, всяка от които се извършва за крайно време.</p>
+<h3 id="Какво-е-яснота"><a class="header" href="#Какво-е-яснота">Какво е яснота?</a></h3>
+<p>Свойство на алгоритъма всяка стъпка да е точно указана и да бъде еднозначно определено коя е следващата.</p>
+<h3 id="Какво-е-масовост"><a class="header" href="#Какво-е-масовост">Какво е масовост?</a></h3>
+<p>Свойство на алгоритъма да се прилага успешно за решаване на задачи от един и същ тип спрямо различни входни данни.</p>
+<h3 id="Какво-е-крайност"><a class="header" href="#Какво-е-крайност">Какво е крайност?</a></h3>
+<p>Свойство на алгоритъм да свърши изпълнението след краен брой стъпки.</p>
+<h2 id="Структурно-програмиране"><a class="header" href="#Структурно-програмиране">Структурно програмиране</a></h2>
+<h3 id="Каква-е-целта-на-структурното-програмиране"><a class="header" href="#Каква-е-целта-на-структурното-програмиране">Каква е целта на структурното програмиране?</a></h3>
+<p>Опростяване на алгоритмите чрез забрана на определени конструкции, които затрудняват анализа на алгоритмите, без да решават по-голям клас от проблеми.</p>
+<h3 id="От-какво-се-състои-структурния-алгоритъм"><a class="header" href="#От-какво-се-състои-структурния-алгоритъм">От какво се състои структурния алгоритъм?</a></h3>
+<p>Вложени структури.</p>
+<h3 id="Какви-входни-и-изходни-точки-могат-да-имат-структурите"><a class="header" href="#Какви-входни-и-изходни-точки-могат-да-имат-структурите">Какви входни и изходни точки могат да имат структурите?</a></h3>
+<p>Една входна и една изходна.</p>
+<h3 id="Кои-са-видовете-структури"><a class="header" href="#Кои-са-видовете-структури">Кои са видовете структури?</a></h3>
+<p>Проста, линейна, за избор и цикъл.</p>
+<h2 id="Проста-структура"><a class="header" href="#Проста-структура">Проста структура</a></h2>
+<h3 id="Какво-съдържа-проста-структура"><a class="header" href="#Какво-съдържа-проста-структура">Какво съдържа проста структура?</a></h3>
+<p>Блок за обработка или вход-изход.</p>
+<h3 id="Какво-не-може-да-съдържа-проста-структура"><a class="header" href="#Какво-не-може-да-съдържа-проста-структура">Какво не може да съдържа проста структура?</a></h3>
+<p>Блок за разклонение, цикъл, условен преход.</p>
+<h2 id="Линейна-структура"><a class="header" href="#Линейна-структура">Линейна структура</a></h2>
+<h3 id="Какво-съдържа-линейната-структура"><a class="header" href="#Какво-съдържа-линейната-структура">Какво съдържа линейната структура?</a></h3>
+<p>Слепва 2 структури.</p>
+<h3 id="Как-се-изпълняват-вложените-структури-в-линейната-структура"><a class="header" href="#Как-се-изпълняват-вложените-структури-в-линейната-структура">Как се изпълняват вложените структури в линейната структура?</a></h3>
+<p>Всяка точно по веднъж.</p>
+<h2 id="Структура-за-избор"><a class="header" href="#Структура-за-избор">Структура за избор</a></h2>
+<h3 id="Какво-съдържа-структура-за-избор"><a class="header" href="#Какво-съдържа-структура-за-избор">Какво съдържа структура за избор?</a></h3>
+<p>Блок за разклонение, един вход и два изхода.</p>
+<h3 id="Каква-е-функцията-на-структура-за-избор"><a class="header" href="#Каква-е-функцията-на-структура-за-избор">Каква е функцията на структура за избор?</a></h3>
+<p>Прави избор м/у 2 структури.</p>
+<h3 id="Коя-от-вложените-структури-в-структура-за-избор-се-изпълнява"><a class="header" href="#Коя-от-вложените-структури-в-структура-за-избор-се-изпълнява">Коя от вложените структури в структура за избор се изпълнява?</a></h3>
+<p>Едната или другата, в зависимост от условието.</p>
+<h2 id="Структура-цикъл-с-пост-условие"><a class="header" href="#Структура-цикъл-с-пост-условие">Структура цикъл с пост-условие</a></h2>
+<h3 id="От-какво-се-състои-структурата-цикъл-с-пост-условие"><a class="header" href="#От-какво-се-състои-структурата-цикъл-с-пост-условие">От какво се състои структурата цикъл с пост-условие?</a></h3>
+<p>Структура-тяло, последвана от условие за повторение.</p>
+<h3 id="В-какъв-ред-се-изпълняват-елементите-на-цикъл-с-пост-условие"><a class="header" href="#В-какъв-ред-се-изпълняват-елементите-на-цикъл-с-пост-условие">В какъв ред се изпълняват елементите на цикъл с пост-условие?</a></h3>
+<p>Първо тялото, после проверката.</p>
+<h3 id="От-какво-трябва-да-зависи-условието-за-повторение-на-цикъл-с-пост-условие"><a class="header" href="#От-какво-трябва-да-зависи-условието-за-повторение-на-цикъл-с-пост-условие">От какво трябва да зависи условието за повторение на цикъл с пост-условие?</a></h3>
+<p>Задължително от променлива, която се изменя в тялото.</p>
+<h3 id="Може-ли-тялото-на-цикъл-с-пост-условие-да-не-се-изпълни"><a class="header" href="#Може-ли-тялото-на-цикъл-с-пост-условие-да-не-се-изпълни">Може ли тялото на цикъл с пост-условие да не се изпълни?</a></h3>
+<p>Не, винаги ще се изпълни поне веднъж.</p>
+<h2 id="Структура-цикъл-с-префиксно-условие"><a class="header" href="#Структура-цикъл-с-префиксно-условие">Структура цикъл с префиксно-условие</a></h2>
+<h3 id="От-какво-се-състои-структурата-цикъл-с-префиксно-условие"><a class="header" href="#От-какво-се-състои-структурата-цикъл-с-префиксно-условие">От какво се състои структурата цикъл с префиксно-условие?</a></h3>
+<p>Условие за повторение, последвано от структура тяло.</p>
+<h3 id="В-какъв-ред-се-изпълняват-елементите-на-цикъл-с-префиксно-условие"><a class="header" href="#В-какъв-ред-се-изпълняват-елементите-на-цикъл-с-префиксно-условие">В какъв ред се изпълняват елементите на цикъл с префиксно-условие?</a></h3>
+<p>Първо се проверява условието и в зависимост от него, се изпълнява тялото.</p>
+<h3 id="От-какво-трябва-да-зависи-условието-за-повторение-на-цикъл-с-префиксно-условие"><a class="header" href="#От-какво-трябва-да-зависи-условието-за-повторение-на-цикъл-с-префиксно-условие">От какво трябва да зависи условието за повторение на цикъл с префиксно-условие?</a></h3>
+<p>Задължително от променлива, която се изменя в тялото.</p>
+<h3 id="Може-ли-тялото-на-цикъл-с-префиксно-условие-да-не-се-изпълни"><a class="header" href="#Може-ли-тялото-на-цикъл-с-префиксно-условие-да-не-се-изпълни">Може ли тялото на цикъл с префиксно-условие да не се изпълни?</a></h3>
+<p>Да.</p>
+<h2 id="Рекурсивни-алгоритми"><a class="header" href="#Рекурсивни-алгоритми">Рекурсивни алгоритми</a></h2>
+<h3 id="От-какво-се-състоят"><a class="header" href="#От-какво-се-състоят">От какво се състоят?</a></h3>
+<p>Обработка на тривиален случай или рекурсивно извикване с по-малка задача.</p>
+<h3 id="Кога-не-се-използва-рекурсия"><a class="header" href="#Кога-не-се-използва-рекурсия">Кога не се използва рекурсия?</a></h3>
+<p>При алгоритъм, който може да се реализира итеративно с малко на брой променливи.</p>
+<h3 id="Как-се-изгражда"><a class="header" href="#Как-се-изгражда">Как се изгражда?</a></h3>
+<p>Чрез метода на низходящото програмиране, като в алгоритъма се използва недефиниран алгоритъм – този, който реализираме в момента.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="operacii.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="c_ezikut_na_sistemnoto_programirane.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="operacii.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="c_ezikut_na_sistemnoto_programirane.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

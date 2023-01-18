@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="bg" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Системно програмиране - Въпроси от презентациите по програмиране от 9 клас</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="sistemno_programirane.html"><strong aria-hidden="true">1.</strong> Системно програмиране</a></li><li class="chapter-item expanded "><a href="operacii.html"><strong aria-hidden="true">2.</strong> Операции</a></li><li class="chapter-item expanded "><a href="algoritmi.html"><strong aria-hidden="true">3.</strong> Алгоритми</a></li><li class="chapter-item expanded "><a href="c_ezikut_na_sistemnoto_programirane.html"><strong aria-hidden="true">4.</strong> C – езикът на системното програмиране</a></li><li class="chapter-item expanded "><a href="funkcii_v_c.html"><strong aria-hidden="true">5.</strong> Функции в C</a></li><li class="chapter-item expanded "><a href="c_za_sredno_naprednali.html"><strong aria-hidden="true">6.</strong> C за среднo напреднали</a></li><li class="chapter-item expanded "><a href="potrebitelski_tipove.html"><strong aria-hidden="true">7.</strong> Потребителски типове</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="avtori.html">Автори</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Въпроси от презентациите по програмиране от 9 клас</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/bvpav/programirane-9kl" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/bvpav/programirane-9kl/edit/master/src/sistemno_programirane.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Системно-програмиране"><a class="header" href="#Системно-програмиране">Системно програмиране</a></h1>
+<p><a href="https://docs.google.com/presentation/d/1Zeve0ceKlp4WRqEEGVQkyWAf_vugKukY/edit?usp=sharing&amp;ouid=101404069411555549635&amp;rtpof=true&amp;sd=true">Линк към презентацията</a></p>
+<h1 id="Информация"><a class="header" href="#Информация">Информация</a></h1>
+<h3 id="Какво-е-информация"><a class="header" href="#Какво-е-информация">Какво е информация?</a></h3>
+<p>Описва формата на нещо.</p>
+<h3 id="Какво-е-бит"><a class="header" href="#Какво-е-бит">Какво е бит?</a></h3>
+<p>Цифра от двоична бройна система.</p>
+<h3 id="Как-с-битове-се-записват-числа"><a class="header" href="#Как-с-битове-се-записват-числа">Как с битове се записват числа?</a></h3>
+<p>Двоична система - поредица от битове.</p>
+<h3 id="Какво-е-код"><a class="header" href="#Какво-е-код">Какво е код?</a></h3>
+<p>Значението, което даваме на битовете.</p>
+<h1 id="Калкулатор"><a class="header" href="#Калкулатор">Калкулатор</a></h1>
+<h3 id="Какво-е-калкулатор"><a class="header" href="#Какво-е-калкулатор">Какво е калкулатор?</a></h3>
+<p>Автоматична машина за смятане.</p>
+<h3 id="Какви-са-били-първите-калкулатори"><a class="header" href="#Какви-са-били-първите-калкулатори">Какви са били първите калкулатори?</a></h3>
+<p>Механични.</p>
+<h3 id="Какво-е-hard-в-hardware"><a class="header" href="#Какво-е-hard-в-hardware">Какво е hard в hardware?</a></h3>
+<p>Редът на операциите е твърдо определен.</p>
+<h2 id="Универсален-компютър"><a class="header" href="#Универсален-компютър">Универсален компютър</a></h2>
+<h3 id="С-какво-се-отличава-универсален-компютър-от-калкулатор"><a class="header" href="#С-какво-се-отличава-универсален-компютър-от-калкулатор">С какво се отличава универсален компютър от калкулатор?</a></h3>
+<p>Универсалният компютър може да симулира всяко друго устройство, а личният калкулатор може да изпълнява само конкретни фиксирани операции.</p>
+<h3 id="Какво-е-soft-в-software"><a class="header" href="#Какво-е-soft-в-software">Какво е soft в software?</a></h3>
+<p>Универсалността се състои от &quot;меко&quot; контролиране на реда на примитивните операции, задаван с програма.</p>
+<h3 id="От-какво-се-състои-програма"><a class="header" href="#От-какво-се-състои-програма">От какво се състои програма?</a></h3>
+<p>Програмата се състои от последователност от кодове на инструкции, всички от които извършват проста операция (местене, събиране и др.) или преход до др. точка от програмата.</p>
+<h2 id="Памет-ram"><a class="header" href="#Памет-ram">Памет (RAM)</a></h2>
+<h3 id="За-какво-служи-ram"><a class="header" href="#За-какво-служи-ram">За какво служи RAM?</a></h3>
+<p>За записване и четене на двоична информация (данни).</p>
+<h3 id="Какви-са-операциите-с-ram"><a class="header" href="#Какви-са-операциите-с-ram">Какви са операциите с RAM?</a></h3>
+<p>Четене и писане на байтове.</p>
+<h3 id="Как-е-организирана-ram"><a class="header" href="#Как-е-организирана-ram">Как е организирана RAM?</a></h3>
+<p>На байтове.</p>
+<h3 id="Какво-е-байт"><a class="header" href="#Какво-е-байт">Какво е байт?</a></h3>
+<p>Клетка от (RAM-та) осем бита.</p>
+<h2 id="Процесор-cpu"><a class="header" href="#Процесор-cpu">Процесор (CPU)</a></h2>
+<h3 id="Колко-памет-има-в-процесора-и-как-се-нарича"><a class="header" href="#Колко-памет-има-в-процесора-и-как-се-нарича">Колко памет има в процесора и как се нарича?</a></h3>
+<p>Процесора има съвсем малко памет, състояща се от няколко клетки, наречени регистри.</p>
+<h3 id="Какво-е-машинна-дума"><a class="header" href="#Какво-е-машинна-дума">Какво е машинна дума?</a></h3>
+<p>Броя на битовете във всеки регистър. Определя колко бита се обработват с 1 инструкция. Днес е 64, а по времето на Флинстоун е била 32.</p>
+<h3 id="Какво-прави-процесорът"><a class="header" href="#Какво-прави-процесорът">Какво прави процесорът?</a></h3>
+<p>Чете последователно инструкции от RAM и ги изпълнява.</p>
+<h3 id="Върху-какви-данни-работят-инструкциите"><a class="header" href="#Върху-какви-данни-работят-инструкциите">Върху какви данни работят инструкциите?</a></h3>
+<p>Върху данни в регистрите, или клетки от RAMта.</p>
+<h3 id="Примери-за-видове-инструкции"><a class="header" href="#Примери-за-видове-инструкции">Примери за видове инструкции?</a></h3>
+<p>Аритметични, побитови, за разклонение.</p>
+<h2 id="Интерфейс"><a class="header" href="#Интерфейс">Интерфейс</a></h2>
+<h3 id="Какво-е-интерфейс"><a class="header" href="#Какво-е-интерфейс">Какво е интерфейс?</a></h3>
+<p>Начин за свързване на хардуерни и софтуерни компоненти.</p>
+<h3 id="Какво-е-хардуерен-интерфейс"><a class="header" href="#Какво-е-хардуерен-интерфейс">Какво е хардуерен интерфейс?</a></h3>
+<p>Описва физическите и електрическите характеристики на връзката.</p>
+<h3 id="Какво-е-софтуерен-интерфейс-api"><a class="header" href="#Какво-е-софтуерен-интерфейс-api">Какво е софтуерен интерфейс (API)?</a></h3>
+<p>Описват типовете, функциите и данните, експортирани от софтуерен модел.</p>
+<h3 id="Каква-е-целта-на-интерфейса"><a class="header" href="#Каква-е-целта-на-интерфейса">Каква е целта на интерфейса?</a></h3>
+<p>Целта е максимална съвместимост.</p>
+<h2 id="Входно-изходни-устройства"><a class="header" href="#Входно-изходни-устройства">Входно-изходни устройства</a></h2>
+<h3 id="Какво-прави-входно-устройство"><a class="header" href="#Какво-прави-входно-устройство">Какво прави входно устройство?</a></h3>
+<p>Постъпва информация в RAM (чрез клавиатурата), която процесора да обработва.</p>
+<h3 id="Какво-прави-изходно-устройство"><a class="header" href="#Какво-прави-изходно-устройство">Какво прави изходно устройство?</a></h3>
+<p>Извежда информация от RAM (чрез видеокартата).</p>
+<h3 id="Как-процесорът-комуникира-с-външния-свят"><a class="header" href="#Как-процесорът-комуникира-с-външния-свят">Как процесорът комуникира с външния свят?</a></h3>
+<p>Чрез RAM-та.</p>
+<h2 id="Устройства-за-съхранение-на-данни"><a class="header" href="#Устройства-за-съхранение-на-данни">Устройства за съхранение на данни</a></h2>
+<h3 id="Защо-са-необходими-устройствата-за-съхраняване-на-данни"><a class="header" href="#Защо-са-необходими-устройствата-за-съхраняване-на-данни">Защо са необходими устройствата за съхраняване на данни?</a></h3>
+<p>RAM-та е енергозависима и губи данните когато спре захранването. Има висока цена на мегабайт.</p>
+<h3 id="Защо-се-наричат-блокови-устройства"><a class="header" href="#Защо-се-наричат-блокови-устройства">Защо се наричат блокови устройства?</a></h3>
+<p>Делят информацията на блокове (сектори).</p>
+<h3 id="Какви-са-операциите-с-устройствата-за-съхраняване-на-данни"><a class="header" href="#Какви-са-операциите-с-устройствата-за-съхраняване-на-данни">Какви са операциите с устройствата за съхраняване на данни?</a></h3>
+<p>Четене и писане на блокове.</p>
+<h3 id="Как-процесорът-указва-кой-блок-желае-да-достъпи"><a class="header" href="#Как-процесорът-указва-кой-блок-желае-да-достъпи">Как процесорът указва кой блок желае да достъпи?</a></h3>
+<p>С пореден номер, започващ от 0.</p>
+<h3 id="Какви-са-недостатъците-на-hdd-спрямо-ssd"><a class="header" href="#Какви-са-недостатъците-на-hdd-спрямо-ssd">Какви са недостатъците на HDD спрямо SSD?</a></h3>
+<p>Достъпът до несъседни блокове е бавен.</p>
+<h3 id="Какви-са-недостатъците-на-ssd-спрямо-hdd"><a class="header" href="#Какви-са-недостатъците-на-ssd-спрямо-hdd">Какви са недостатъците на SSD спрямо HDD?</a></h3>
+<p>Имат лимит на броя на презаписи.</p>
+<h2 id="Устройства-за-съхранение-на-данни-1"><a class="header" href="#Устройства-за-съхранение-на-данни-1">Устройства за съхранение на данни</a></h2>
+<h3 id="Какви-са-функциите-на-дънната-платка"><a class="header" href="#Какви-са-функциите-на-дънната-платка">Какви са функциите на дънната платка?</a></h3>
+<p>Свързва всички компоненти на компютъра и осигурява захранването помежду им.</p>
+<h3 id="Какъв-интерфейс-използват-разширителните-платки"><a class="header" href="#Какъв-интерфейс-използват-разширителните-платки">Какъв интерфейс използват разширителните платки?</a></h3>
+<p>PCI (Peripheral Component Interconnect express)</p>
+<h3 id="Как-се-наричат-модулите-с-ram"><a class="header" href="#Как-се-наричат-модулите-с-ram">Как се наричат модулите с RAM?</a></h3>
+<p>DIMM (Dual In-line Memory Module)</p>
+<h3 id="Как-се-монтира-процесора"><a class="header" href="#Как-се-монтира-процесора">Как се монтира процесора?</a></h3>
+<p>ZIF (Zero Insertion Force) цокли</p>
+<h3 id="Какъв-интерфейс-използват-блоковите-устройства"><a class="header" href="#Какъв-интерфейс-използват-блоковите-устройства">Какъв интерфейс използват блоковите устройства?</a></h3>
+<p>SATA (Serial AT Attachment)</p>
+<h2 id="Файлова-система"><a class="header" href="#Файлова-система">Файлова система</a></h2>
+<h3 id="Какво-е-файлова-система"><a class="header" href="#Какво-е-файлова-система">Какво е файлова система?</a></h3>
+<p>Представя блоковете на блоково устройство като йерархия от файлове и директории.</p>
+<h3 id="Какво-е-файл"><a class="header" href="#Какво-е-файл">Какво е файл?</a></h3>
+<p>Именувана последователност от байтове с прозволна дължина.</p>
+<h3 id="Какво-е-пълен-път-на-файл"><a class="header" href="#Какво-е-пълен-път-на-файл">Какво е пълен път на файл?</a></h3>
+<p>Реда на директориите, които съдържат файла, започвайки от корена.</p>
+<h3 id="Какво-е-директория"><a class="header" href="#Какво-е-директория">Какво е директория?</a></h3>
+<p>Единица от файловата система с име, съдържаща други директории и файлове.</p>
+<h3 id="Какво-съдържат-изпълнимите-файлове"><a class="header" href="#Какво-съдържат-изпълнимите-файлове">Какво съдържат изпълнимите файлове?</a></h3>
+<p>Кодове на инструкции за процесора.</p>
+<h2 id="Изпълними-файлове"><a class="header" href="#Изпълними-файлове">Изпълними файлове</a></h2>
+<h3 id="Какво-е-секция-на-изпълним-файл"><a class="header" href="#Какво-е-секция-на-изпълним-файл">Какво е секция на изпълним файл?</a></h3>
+<p>Част от него, съдържаща инструкции или инициализирани данни.</p>
+<h3 id="Какви-видове-секции-има"><a class="header" href="#Какви-видове-секции-има">Какви видове секции има?</a></h3>
+<p>За данни, read only данни, инструкции (text).</p>
+<h3 id="Какво-прави-свързването"><a class="header" href="#Какво-прави-свързването">Какво прави свързването?</a></h3>
+<p>Изпълнимите файлове или модули съдържат именувани препратки помежду си, които позволяват на един изпълним файл да използва код/данни от друг.</p>
+<h2 id="Операционна-система"><a class="header" href="#Операционна-система">Операционна система</a></h2>
+<h3 id="От-кои-файлове-се-състои-операционната-система"><a class="header" href="#От-кои-файлове-се-състои-операционната-система">От кои файлове се състои операционната система?</a></h3>
+<p>Зареждащ модул, ядро, драйвери, библиотеки и инструменти за администрация и разработка.</p>
+<h3 id="Какво-е-зареждащ-модул-ядро-драйвер-библиотека-инструмент-приложение"><a class="header" href="#Какво-е-зареждащ-модул-ядро-драйвер-библиотека-инструмент-приложение">Какво е зареждащ модул, ядро, драйвер, библиотека, инструмент, приложение?</a></h3>
+<table><thead><tr><th>ОС компонент</th><th>функция</th></tr></thead><tbody>
+<tr><td>Зареждащият модул</td><td>зарежда ядрото в паметта при стартиране на ОС.</td></tr>
+<tr><td>Ядрото</td><td>управлява процесора и паметта.</td></tr>
+<tr><td>Драйверите</td><td>управляват входно-изходни устройства.</td></tr>
+<tr><td>Библиотеката</td><td>предоставя услуги на други модули</td></tr>
+<tr><td>Инструментите</td><td>се използват за администрация или разработка. Предоставят нова функционалност (пр. VirtualBox).</td></tr>
+<tr><td>Приложението</td><td>предоставя функции на потребителя</td></tr>
+</tbody></table>
+<h3 id="Кои-са-функциите-на-ОС-за-програмите"><a class="header" href="#Кои-са-функциите-на-ОС-за-програмите">Кои са функциите на ОС за програмите?</a></h3>
+<ul>
+<li>Управлява и защитава ресурсите на компютъра.</li>
+<li>Дефинира формата на изпълнимите файлове.</li>
+<li>Определя интерфейсите м/у приложенията и устройствата</li>
+</ul>
+<h3 id="Кои-са-функциите-на-ОС-за-ресурсите"><a class="header" href="#Кои-са-функциите-на-ОС-за-ресурсите">Кои са функциите на ОС за ресурсите?</a></h3>
+<p>Операционната система заделя системните ресурси при необходимост от процесите.</p>
+<h3 id="Какви-ОС-знаете"><a class="header" href="#Какви-ОС-знаете">Какви ОС знаете?</a></h3>
+<ul>
+<li>Linux</li>
+<li>Linux</li>
+<li>Linux</li>
+<li>BSD</li>
+<li>MacOS</li>
+<li>Windows</li>
+<li>Android</li>
+<li>iOS</li>
+<li><a href="https://en.wikipedia.org/wiki/TempleOS">TempleOS</a> (мн ясно)</li>
+<li>Linux</li>
+</ul>
+<h2 id="Файлове-с-данни"><a class="header" href="#Файлове-с-данни">Файлове с данни</a></h2>
+<h3 id="Какво-описва-форматът-на-данните"><a class="header" href="#Какво-описва-форматът-на-данните">Какво описва форматът на данните?</a></h3>
+<p>Всеки тип файл си има специфичен формат на данните, който описва значението на всеки байт от файла.</p>
+<h3 id="Какъв-е-форматът-на-текстовите-файлове"><a class="header" href="#Какъв-е-форматът-на-текстовите-файлове">Какъв е форматът на текстовите файлове?</a></h3>
+<p>ASCII.</p>
+<h3 id="Какво-е-ascii"><a class="header" href="#Какво-е-ascii">Какво е ASCII?</a></h3>
+<p>Кодова таблица, която записва управяващи (control) и принтируеми (printable) символи, всеки записан в един байт.</p>
+<h3 id="Какво-определя-кодовата-таблица-на-ascii"><a class="header" href="#Какво-определя-кодовата-таблица-на-ascii">Какво определя кодовата таблица на ASCII?</a></h3>
+<p>Виж <a href="./sistemno_programirane.html#%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE-%D0%B5-ascii">Какво е ASCII</a></p>
+<h2 id="source-файлове"><a class="header" href="#source-файлове">Source файлове</a></h2>
+<h3 id="Какъв-е-форматът-на-source-файлове"><a class="header" href="#Какъв-е-форматът-на-source-файлове">Какъв е форматът на source файлове?</a></h3>
+<p>ASCII.</p>
+<h3 id="Какво-се-съдържа-в-source-файловете"><a class="header" href="#Какво-се-съдържа-в-source-файловете">Какво се съдържа в source файловете?</a></h3>
+<p>Текст, записан по правилата на език за програмиране.</p>
+<h3 id="Какво-е-компилатор-и-какво-прави"><a class="header" href="#Какво-е-компилатор-и-какво-прави">Какво е компилатор и какво прави?</a></h3>
+<p>Инструмент (изпълним файл), който превръща изходен/source код в машинен код.</p>
+<h3 id="Кои-са-разширенията-на-source-файлове-съдържащи-c-програми"><a class="header" href="#Кои-са-разширенията-на-source-файлове-съдържащи-c-програми">Кои са разширенията на source файлове, съдържащи C програми?</a></h3>
+<p><code>.c</code> и <code>.h</code> (за декларации)</p>
+<h2 id="Инструменти-за-създаване-на-програми-програмиране"><a class="header" href="#Инструменти-за-създаване-на-програми-програмиране">Инструменти за създаване на програми (програмиране)</a></h2>
+<h3 id="Каква-е-функцията-на-source-контрол-системата"><a class="header" href="#Каква-е-функцията-на-source-контрол-системата">Каква е функцията на source контрол системата?</a></h3>
+<p>Поддържа пълната история на модификациите върху всички изходни файлове.</p>
+<h3 id="Какви-са-функциите-на-редактор-за-програмен-език"><a class="header" href="#Какви-са-функциите-на-редактор-за-програмен-език">Какви са функциите на редактор за програмен език?</a></h3>
+<p>Редактира изходни (source) файлове.</p>
+<h3 id="Какви-съобщения-извежда-компилаторът"><a class="header" href="#Какви-съобщения-извежда-компилаторът">Какви съобщения извежда компилаторът?</a></h3>
+<p>Съобщения за грешки, или предупреждения.</p>
+<h3 id="Какви-възможности-предоставя-дебъгера"><a class="header" href="#Какви-възможности-предоставя-дебъгера">Какви възможности предоставя дебъгера?</a></h3>
+<p>Постъпково изпълнение на програмата с наблюдаване на състоянието на паметта при всяка стъпка.</p>
+<h3 id="Какво-е-среда-за-разработка"><a class="header" href="#Какво-е-среда-за-разработка">Какво е среда за разработка?</a></h3>
+<p>Потребителски интерфейс на съвкупност от текстов редактор, компилатор, дебъгер и source контрол система.</p>
+<h2 id="Изпълнение-на-програми"><a class="header" href="#Изпълнение-на-програми">Изпълнение на програми</a></h2>
+<h3 id="Как-се-нарича-адресът-на-първата-инструкция-от-програма"><a class="header" href="#Как-се-нарича-адресът-на-първата-инструкция-от-програма">Как се нарича адресът на първата инструкция от програма?</a></h3>
+<p>Входна точка.</p>
+<h3 id="Какво-е-процес"><a class="header" href="#Какво-е-процес">Какво е процес?</a></h3>
+<p>Програма по време на нейното изпълнение.</p>
+<h3 id="Как-са-изолирани-процесите"><a class="header" href="#Как-са-изолирани-процесите">Как са изолирани процесите?</a></h3>
+<p>Всеки процес работи в собствена „виртуална“ памет.</p>
+<h3 id="Какво-е-предимството-на-виртуалната-памет"><a class="header" href="#Какво-е-предимството-на-виртуалната-памет">Какво е предимството на виртуалната памет?</a></h3>
+<p>Процесите могат да заделят памет, много по-голяма от наличната, чрез използване на файлове.</p>
+<h3 id="Кой-компонент-дава-възможност-на-един-процесор-да-се-споделя-му-много-процеси"><a class="header" href="#Кой-компонент-дава-възможност-на-един-процесор-да-се-споделя-му-много-процеси">Кой компонент дава възможност на един процесор да се споделя м/у много процеси?</a></h3>
+<p>Ядрото на операционната система.</p>
+<h2 id="Клавиатура"><a class="header" href="#Клавиатура">Клавиатура</a></h2>
+<h3 id="Какви-типове-клавиши-има-във-клавиатурата"><a class="header" href="#Какви-типове-клавиши-има-във-клавиатурата">Какви типове клавиши има във клавиатурата?</a></h3>
+<ul>
+<li>Символни (букви + препинателни знаци + спец. символи)</li>
+<li>Модификаторни (<kbd>CTRL</kbd>, <kbd>Alt</kbd>)</li>
+<li>Числови (<kbd>0</kbd>-<kbd>9</kbd>)</li>
+<li>Функционални (<kbd>F1</kbd>-<kbd>F12</kbd>)</li>
+<li>Навигационни (стрелки)</li>
+<li>Системни</li>
+</ul>
+<h3 id="Кои-клавиши-от-клавиатурата-променят-значението-на-други"><a class="header" href="#Кои-клавиши-от-клавиатурата-променят-значението-на-други">Кои клавиши от клавиатурата променят значението на други?</a></h3>
+<p>Модификаторните.</p>
+<h3 id="Кои-клавиши-от-клавиатурата-зависят-от-езика-на-въвеждане"><a class="header" href="#Кои-клавиши-от-клавиатурата-зависят-от-езика-на-въвеждане">Кои клавиши от клавиатурата зависят от езика на въвеждане?</a></h3>
+<p>Символните.</p>
+<h3 id="Какъв-тип-клавиш-е-tab"><a class="header" href="#Какъв-тип-клавиш-е-tab">Какъв тип клавиш е <kbd>TAB</kbd>?</a></h3>
+<p>Навигационен.</p>
+<h2 id="Графичен-потребителски-интерфейс"><a class="header" href="#Графичен-потребителски-интерфейс">Графичен потребителски интерфейс</a></h2>
+<h3 id="За-какво-служи-графичния-потребителски-интерфейс"><a class="header" href="#За-какво-служи-графичния-потребителски-интерфейс">За какво служи графичния потребителски интерфейс?</a></h3>
+<p>Визуализация на информацията в графична формула.</p>
+<h3 id="Какво-прави-системата-за-управление-на-прозорците"><a class="header" href="#Какво-прави-системата-за-управление-на-прозорците">Какво прави системата за управление на прозорците?</a></h3>
+<p>Създава виртуални &quot;дисплеи&quot;, в които приложенията могат да рисуват независимо в собствено виртуално пространство за рисуване.</p>
+<h3 id="Какво-е-диалогово-поле"><a class="header" href="#Какво-е-диалогово-поле">Какво е диалогово поле?</a></h3>
+<p>Малка част от екрана, чрез която се показва въвежда информация.</p>
+<h3 id="Примери-за-стандартни-диалогови-полета"><a class="header" href="#Примери-за-стандартни-диалогови-полета">Примери за стандартни диалогови полета?</a></h3>
+<ul>
+<li>Поле със статичен текст</li>
+<li>Поле за редактиране</li>
+<li>Поле със падащ списък</li>
+</ul>
+<h3 id="Какво-е-фокус"><a class="header" href="#Какво-е-фокус">Какво е фокус?</a></h3>
+<p>Избрания елемент от графичния потребителски интерфейс, който получава съобщенията от клавиатурата.</p>
+<h3 id="Как-се-променя-фокусът"><a class="header" href="#Как-се-променя-фокусът">Как се променя фокусът?</a></h3>
+<p>С посочване или с <kbd>Tab</kbd> или стрелките.</p>
+<h2 id="Конзола"><a class="header" href="#Конзола">Конзола</a></h2>
+<h3 id="Какво-е-конзола"><a class="header" href="#Какво-е-конзола">Какво е конзола?</a></h3>
+<p>Метод за общуване с компютър, при който се пишат команди с параметри от клавиатурата и след натискане на <kbd>Enter</kbd>, се изпълнява командата и изважда редова информация към принтер или монитор в текстов режим.</p>
+<h3 id="Какво-е-стандартен-вход"><a class="header" href="#Какво-е-стандартен-вход">Какво е стандартен вход?</a></h3>
+<p>Поток от символи, от който един процес прочита информация.</p>
+<h3 id="Какво-е-стандартен-изход"><a class="header" href="#Какво-е-стандартен-изход">Какво е стандартен изход?</a></h3>
+<p>Поток от символи, в който един процес изписва информация.</p>
+<h3 id="Какво-са-параметрите-на-процесите"><a class="header" href="#Какво-са-параметрите-на-процесите">Какво са параметрите на процесите?</a></h3>
+<p>Низове от символи, които може да променят изпълнението на един процес.</p>
+<h3 id="Какво-е-външна-команда"><a class="header" href="#Какво-е-външна-команда">Какво е външна команда?</a></h3>
+<p>Име на изпълним файл, който се изпълнява.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="next" href="operacii.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="next" href="operacii.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
